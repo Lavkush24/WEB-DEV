@@ -1,3 +1,5 @@
+import { Search } from "./Search";
+
 export function Header({
     brand,
 
@@ -15,11 +17,7 @@ export function Header({
                 </div>
             </div>
             <div>
-                <input 
-                    type="text" 
-                    placeholder="search feature, tutorials, etc" 
-                    className="border-solid border-black bg-gray-200 text-xs p-2 w-[100px] rounded-sm sm:w-[350px]"
-                />
+                <Search placeText={"Search features , tutorials , etc."} width={"500px"} className="hidden"></Search>
             </div>
             <div className="flex gap-2 hidden sm:flex">
                 <div className="w-[30px] h-[30px] rounded-full bg-gray-300 flex items-center justify-center hover:cursor-pointer">
