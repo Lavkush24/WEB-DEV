@@ -19,7 +19,7 @@ export function Header({
             <div>
                 <Search placeText={"Search features , tutorials , etc."} width={"500px"} className="hidden"></Search>
             </div>
-            <div className="flex gap-2 hidden sm:flex">
+            <div className="flex gap-2 sm:flex">
                 <div className="w-[30px] h-[30px] rounded-full bg-gray-300 flex items-center justify-center hover:cursor-pointer">
                     <a>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
