@@ -1,6 +1,19 @@
 import { Profile } from "./components/Profile"
+import { BackgroundChanger, ColorButton, GroupButton } from "./components/BackgroundChanger"
+import { RecoilRoot } from "recoil"
 
 function App() {
+  return(
+    <>
+      <RecoilRoot>
+        <BackgroundChanger/>
+      </RecoilRoot>
+    </>
+  )
+}
+
+
+function ProfileSetup() {
   return(
     <>
       <div className="flex flex-col justify-center items-center pt-30">
@@ -9,5 +22,4 @@ function App() {
     </>
   )
 }
-
 export default App
