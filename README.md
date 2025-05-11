@@ -15,4 +15,31 @@
 
 
 ## INTERFACES
+- assign type to the objecta like a user has some predefined properties.
 - 
+
+## IMPLEMENTATION INTERFACES
+- using the interfaces as the classes
+- it is like the same as java intefaces contain the layout or structure
+- syntax
+
+interfaces Person {
+    // define the 
+}
+
+class Employee implements Person {
+    //defne
+}
+
+## what are TYPES
+- these are not use to implements the classes.
+- able to some other things
+-- union of types let you want a use have id string or number
+-- intersection of two types
+- syntax
+type use = {
+    //define what ever ypu wnt
+}
+
+# ARRAYS in the typescript
+use number[]
