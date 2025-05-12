@@ -83,3 +83,28 @@ const teamlead: TeamLead = {
     startTime: new Date,
     department: "Software Developer"
 }
+
+
+function max(arr:number[]) {
+    let a:number = arr[0];
+    for(let i=1; i<arr.length; i++){
+        if(a < arr[i]){
+            a = arr[i];
+        }
+    }
+    return a;
+}
+
+enum Direction {
+    up = 1,
+    down,
+    left,
+    right,
+}
+
+function doSomething(keyPressed: Direction) {
+
+}
+
+doSomething(Direction.up);
+

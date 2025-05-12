@@ -28,3 +28,32 @@ let r = isLegal({
     age: 19
 });
 console.log(r);
+function gtypes(id) {
+}
+gtypes(1);
+gtypes("1");
+gtypes(true);
+const teamlead = {
+    name: "lavkush",
+    startTime: new Date,
+    department: "Software Developer"
+};
+function max(arr) {
+    let a = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (a < arr[i]) {
+            a = arr[i];
+        }
+    }
+    return a;
+}
+var Direction;
+(function (Direction) {
+    Direction[Direction["up"] = 1] = "up";
+    Direction[Direction["down"] = 2] = "down";
+    Direction[Direction["left"] = 3] = "left";
+    Direction[Direction["right"] = 4] = "right";
+})(Direction || (Direction = {}));
+function doSomething(keyPressed) {
+}
+doSomething(Direction.up);

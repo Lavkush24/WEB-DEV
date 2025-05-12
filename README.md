@@ -41,5 +41,28 @@ type use = {
     //define what ever ypu wnt
 }
 
-# ARRAYS in the typescript
+## ARRAYS in the typescript
 use number[]
+
+## ENUMS in ts
+- used define set of named constants
+
+- syntax
+enum Name {
+    //define the contants 
+}
+
+## Generics
+- it is similar like c++ template 
+- when you want a funtion which return any type variable
+- Generics help us create components that work with any data type .
+
+## Importing and exporting modules
+----------------for importing Modules-------------------
+- one way const express = require("express")
+- ts follow modern way es6 module system
+- import express from "express"
+
+--------------for exporting modules-----------------------
+- export const a = 1;
+- 
