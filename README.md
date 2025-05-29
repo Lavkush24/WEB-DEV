@@ -69,7 +69,7 @@ enum Name {
 
 ## Pick 
 - it help us to select the some value of the current inteface to new one 
-``` 
+```ts
 //syntax
 type newVariable = Pick<type/interface name, 'par1' | 'par2'>;
 
@@ -77,7 +77,7 @@ type newVariable = Pick<type/interface name, 'par1' | 'par2'>;
 
 ## Partial
 - when you want convert each eleemnt of the inteface/type to optional use partial 
-```
+```ts
 
 //syntax
 type optional_name = partial<previous_type/interface>;
@@ -87,7 +87,7 @@ type optional_name = partial<previous_type/interface>;
 ## ReadOnly 
 - it help in making internal values of any object to constant
 - one of the important usecase is when user api key (so can't change by developer)
-```
+```ts
 type user {
     name: "lavkush";
 }
@@ -111,14 +111,14 @@ const user: Readonly<User> = {
 
 ## Record and Map
 - easier and simple way to assign the object type
-```
+```ts
 // using the records
 
 type object_name = Record<string, {par1: type, par2: type, ----}>;
 
 ```
 
-```
+```ts
 //using map
 
 const users = new Map();
@@ -139,9 +139,11 @@ const users = new Map<string,var_name>(); specific example
 
 ## Exclude
 - user to rempve specific type from a type
-```
+```ts
 //syntax 
 type excluded = Exclude<type_name,'for exclude'>;
+
+```
 
 
 
