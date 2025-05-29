@@ -65,4 +65,85 @@ enum Name {
 
 --------------for exporting modules-----------------------
 - export const a = 1;
-- 
+
+
+## Pick 
+- it help us to select the some value of the current inteface to new one 
+``` 
+//syntax
+type newVariable = Pick<type/interface name, 'par1' | 'par2'>;
+
+```
+
+## Partial
+- when you want convert each eleemnt of the inteface/type to optional use partial 
+```
+
+//syntax
+type optional_name = partial<previous_type/interface>;
+
+```
+
+## ReadOnly 
+- it help in making internal values of any object to constant
+- one of the important usecase is when user api key (so can't change by developer)
+```
+type user {
+    name: "lavkush";
+}
+
+user.name = "kushwaha"; // it let you change 
+
+
+// but if you them constant 
+type user {
+    Readonly name: "Lavkush"
+    -
+    -
+}
+
+//or either 
+const user: Readonly<User> = {
+
+}
+
+```
+
+## Record and Map
+- easier and simple way to assign the object type
+```
+// using the records
+
+type object_name = Record<string, {par1: type, par2: type, ----}>;
+
+```
+
+```
+//using map
+
+const users = new Map();
+map.set(whatever);
+map.get(by id or name);
+
+// another way 
+type var_name = {
+    par1: type;
+    par2: type;
+    -
+    -
+    -
+};
+
+const users = new Map<string,var_name>(); specific example
+```
+
+## Exclude
+- user to rempve specific type from a type
+```
+//syntax 
+type excluded = Exclude<type_name,'for exclude'>;
+
+
+
+
+

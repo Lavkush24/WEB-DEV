@@ -1,110 +1,112 @@
-let x: number = 1;
-x = 45
-console.log(x)
+// let x: number = 1;
+// x = 45
+// console.log(x)
 
 
-function print(s: string) {
-    console.log("hello " + s);
-}
-
-print("Lavkush")
-
-function sum(a:number, b:number):number { // here at end explicitly we able to deine return type
-     return a+b;
-}
-
-console.log(sum(4,5));
-
-// function isLegal(age: number):boolean {
-//     return age > 18? true: false;
+// function print(s: string) {
+//     console.log("hello " + s);
 // }
 
-// console.log(isLegal(7));
+// print("Lavkush")
 
-//fucntin take another function as input
-function runAfter(fn: () => void) {
-    setTimeout(fn,1000);
-}
+// function sum(a:number, b:number):number { // here at end explicitly we able to deine return type
+//      return a+b;
+// }
 
-runAfter(function() {
-    console.log("heloo");
-});
+// console.log(sum(4,5));
 
+// // function isLegal(age: number):boolean {
+// //     return age > 18? true: false;
+// // }
 
-interface user {
-    firstName: string,
-    lastName: string,
-    age: number,
-    email?:string // here ? indicate that it is (optional)
-}
+// // console.log(isLegal(7));
 
+// //fucntin take another function as parameter
+// function runAfter(fn: () => void) {
+//     setTimeout(fn,1000);
+// }
 
-function isLegal(user:user) {
-    return user.age > 18 ? true: false;
-}
-
-function Greet(user:user) {
-    console.log("hello" + user.firstName);
-}
-
-let r = isLegal({
-    firstName:"Lavkush",
-    lastName: "Kushwaha",
-    age: 19
-})
-
-console.log(r);
+// runAfter(function() {
+//     console.log("heloo");
+// });
 
 
-type Garg = string | number | boolean;
-function gtypes(id: Garg) {
-
-}
-
-gtypes(1)
-gtypes("1")
-gtypes(true)
+// interface user {
+//     firstName: string,
+//     lastName: string,
+//     age: number,
+//     email?:string // here ? indicate that it is (optional)
+// }
 
 
-type Employee = {
-    name: string,
-    startTime : Date
-};
+// function isLegal(user:user) {
+//     return user.age > 18 ? true: false;
+// }
 
-type Manager = {
-    name: string,
-    department: string,
-};
+// function Greet(user:user) {
+//     console.log("hello" + user.firstName);
+// }
 
-type TeamLead = Employee & Manager;
+// let r = isLegal({
+//     firstName:"Lavkush",
+//     lastName: "Kushwaha",
+//     age: 19
+// })
 
-const teamlead: TeamLead = {
-    name: "lavkush",
-    startTime: new Date,
-    department: "Software Developer"
-}
+// console.log(r);
 
 
-function max(arr:number[]) {
-    let a:number = arr[0];
-    for(let i=1; i<arr.length; i++){
-        if(a < arr[i]){
-            a = arr[i];
-        }
-    }
-    return a;
-}
 
-enum Direction {
-    up = 1,
-    down,
-    left,
-    right,
-}
 
-function doSomething(keyPressed: Direction) {
+// type Garg = string | number | boolean;
+// function gtypes(id: Garg) {
 
-}
+// }
 
-doSomething(Direction.up);
+// gtypes(1)
+// gtypes("1")
+// gtypes(true)
+
+
+// type Employee = {
+//     name: string,
+//     startTime : Date
+// };
+
+// type Manager = {
+//     name: string,
+//     department: string,
+// };
+
+// type TeamLead = Employee & Manager;
+
+// const teamlead: TeamLead = {
+//     name: "lavkush",
+//     startTime: new Date,
+//     department: "Software Developer"
+// }
+
+
+// function max(arr:number[]) {
+//     let a:number = arr[0];
+//     for(let i=1; i<arr.length; i++){
+//         if(a < arr[i]){
+//             a = arr[i];
+//         }
+//     }
+//     return a;
+// }
+
+// enum Direction {
+//     up = 1,
+//     down,
+//     left,
+//     right,
+// }
+
+// function doSomething(keyPressed: Direction) {
+
+// }
+
+// doSomething(Direction.up);
 
