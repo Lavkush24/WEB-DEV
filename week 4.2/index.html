@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+</head>
+<body>
+    <input id="title" type="text" placeholder="title"><br><br>
+    <input id="description" type="text" placeholder="description"><br><br>
+    <button onclick="addToDo2()">Add to do</button><br><br>
+    <div id="container"></div>
+</body>
+<script>
+
+    // worst way to do it 
+    function addToDo() {
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        
+        const list = document.getElementById("container").innerHTML;
+        document.getElementById("container")
+            .innerHTML = 
+                list +
+                `<br>
+                <div>
+                    <div>${title}</div>
+                    <div>${description}</div>
+                    <button>Mark as done</button>
+                </div>`;
+    }
+
+    // -------------------------good way to do the things-----------------------------------
+
+    let gobleId = 1;
+
+    function addToDo2() {
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        // creating new element in the DOM which does not exist
+        const childDiv = createChild(title,description,gobleId++);
+        // childDiv.innerHTML = title;  // giving some text to newly created div
+        document.getElementById("container").appendChild(childDiv); // append child to parent div(container)
+
+    }
+
+    //mark as done function 
+    function markAsDone(todoId) {
+        // here we access the child div using parent div 
+        const parent = document.getElementById(todoId);
+        parent.children[2].innerHTML = "done";
+    }
+
+    // function for create new container child 
+    function createChild(title, description,id) {
+        const child = document.createElement("div");
+
+        const grandChildTitle = document.createElement("div");
+        grandChildTitle.innerHTML = title;
+        const grandChildDescription = document.createElement("div");
+        grandChildDescription.innerHTML = description;
+        const grandChildButton = document.createElement("button");
+        grandChildButton.innerHTML = "Mark as done!";
+        grandChildButton.setAttribute("onclick",`markAsDone(${id})`);
+
+        child.appendChild(grandChildTitle);
+        child.appendChild(grandChildDescription);
+        child.appendChild(grandChildButton);
+        child.setAttribute("id", id);
+        return child;
+    }
+
+
+    // way to manipulate dom using database lists
+    function updateDom(state) {
+        const parent = document.getElementById("container");
+        parent.innerHTML = "";    // it is for the empty the alredy exist data in list
+        for(let i=0; i<state.length; i++) {
+            parent.appendChild(createChild(state[i].title,state[i].description,state[i].id));
+        }
+    }
+
+    updateDom([
+        {
+            title: "go to gym",
+            description: "do it for 4 hours",
+            id: "3",
+        },
+        {
+            title: "study",
+            description: "Do the assignment of maths"
+        }
+    ]);
+
+    // window.setTimeout(async () => {
+    //     const response = await fetch("https://dummyjson.com/todos/random");
+    //     const state = response.json()
+    //     updateDom(state);S
+    // }, 5000);
+
+
+</script>
+</html>
